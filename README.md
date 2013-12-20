@@ -1,4 +1,4 @@
-static1
+Static Website
 =======
 
-Testing simple webapps with cucumber and jasmine
+Exercise in testing simple webapps with cucumber and jasmine
