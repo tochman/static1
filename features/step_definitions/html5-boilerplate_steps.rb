@@ -1,7 +1,4 @@
 Then(/^the page should be titled "(.*?)"$/) do |title|
-  debugger
-  page.source.should have_selector('html')
-  page.source.should have_selector('body')
   page.source.should have_title title
 end
 
