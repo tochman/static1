@@ -11,7 +11,6 @@ end
 Given(/^I search for "(.*?)"$/) do |query|
   fill_in('q', :with => query)
   find('input[name="btnG"]').click
-  #click_link_or_button 'btnG'
 end
 
 Given(/^I am on the "(.*?)" page$/) do |page|
@@ -68,10 +67,6 @@ end
 
 When /^(?:|I )fill in "([^"]*)" for "([^"]*)"$/ do |value, field|
   fill_in(field, :with => value)
-end
-
-Then(/^the page should be titled "(.*?)"$/) do |title|
-  page.should have_selector("title", title)
 end
 
 Then /^I should see a link that points to "([^"]*)"$/ do |href_destination|
