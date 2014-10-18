@@ -25,4 +25,5 @@ Scenario: Load the home page/template
   And I should see a main content area
   And I should see a footer area
 
-
+Scenario: Make sure the corporate name is in the header
+  Then I should see "Static1" in the header
