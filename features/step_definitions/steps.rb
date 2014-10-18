@@ -1,5 +1,5 @@
 Given(/^I am on the home page$/) do
-  visit 'index.html'
+  visit '/index.html'
   page.source.should have_selector('html')
   page.source.should have_selector('body')
 end
@@ -13,8 +13,8 @@ Given(/^I search for "(.*?)"$/) do |query|
   find('input[name="btnG"]').click
 end
 
-Given(/^I am on the "(.*?)" page$/) do |page|
-  visit '/#{page}'
+Given(/^I visit the "(.*?)" page$/) do |page|
+  visit 'public#{page}'
 end
 
 Then(/^I should see "(.*?)"$/) do |string|
