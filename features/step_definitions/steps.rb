@@ -74,6 +74,6 @@ Then /^I should see a link that points to "([^"]*)"$/ do |href_destination|
 end
 
 Then(/^I should see "(.*?)" in the header$/) do |name|
-      pending # express the regexp above with the code you wish you had
+  expect(page).to have_text name
 end
 
