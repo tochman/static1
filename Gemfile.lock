@@ -68,4 +68,5 @@ DEPENDENCIES
   launchy
   poltergeist
   pry
+  rack-test
   rspec
