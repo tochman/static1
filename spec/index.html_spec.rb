@@ -38,5 +38,13 @@ describe '../public/index.html' do
         expect(page).to have_css 'address', text: '1600 Pennsylvania Ave.'
       end
     end
+
+    it 'should contain contact info' do
+      within 'section#footer' do
+        expect(page).to have_css 'p', text: 'Contact Us'
+        expect(page).to have_link 'info@random.com', href: 'mailto:info@random.com'
+      end
+    end
+
   end
 end
