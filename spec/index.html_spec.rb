@@ -34,6 +34,10 @@ describe '../public/index.html' do
       expect(page).to have_css 'form#sign-up input.form-control#user-email'
     end
     
+    it 'should contain submit button' do
+      #<button type="submit" class="btn btn-default">Submit</button>
+      expect(page).to have_css 'button[type="submit"].btn.btn-default', text:'Submit'
+    end
        
   end
 
