@@ -31,4 +31,12 @@ describe '../public/index.html' do
     it { expect(@paragraph[1]).to have_text 'Lorem ipsum' }
        
   end
+
+  describe 'footer' do
+    it 'should contain \'My footer\'' do
+      within 'section#footer' do
+        expect(page).to have_css 'address', text: '1600 Pennsylvania Ave.'
+      end
+    end
+  end
 end
