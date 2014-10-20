@@ -35,8 +35,12 @@ describe '../public/index.html' do
     end
     
     it 'should contain submit button' do
-      #<button type="submit" class="btn btn-default">Submit</button>
       expect(page).to have_css 'button[type="submit"].btn.btn-default', text:'Submit'
+    end
+
+    it 'should show text on button click' do
+      click_button 'Submit'
+      expect(page).to have_text 'form submitted', visible: true
     end
        
   end
