@@ -5,7 +5,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="stylesheet" href="css/bootstrap.css">
-    <script src="js/jquery.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
 </head>
 <body>
@@ -21,6 +21,7 @@
       <input class="form-control" id="user-email"/>
       <button class="btn btn-default" type="submit">Submit</button>
   </form>
+  <div id="toggle">form submitted</div>
 </section>
 <section id="footer">
     <p>My footer</p>
@@ -39,6 +40,14 @@
         e.src='//www.google-analytics.com/analytics.js';
         r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
     ga('create','UA-XXXXX-X');ga('send','pageview');
+</script>
+
+<script>
+	$("#toggle").hide();
+	
+	$(".btn-default").click(function() {
+    	$("#toggle").show(); 
+	});
 </script>
 </body>
 </html>
