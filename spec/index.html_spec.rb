@@ -38,6 +38,10 @@ describe '../public/index.html' do
       expect(page).to have_css 'button[type="submit"].btn.btn-default', text:'Submit'
     end
 
+    it 'should hide text on page load' do
+      expect(page).to_not have_text 'form submitted'
+    end
+   
     it 'should show text on button click' do
       click_button 'Submit'
       expect(page).to have_text 'form submitted', visible: true

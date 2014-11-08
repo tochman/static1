@@ -10,7 +10,7 @@ Scenario: Make sure page is including all what we need
   And the page should have a meta tag for "author"
   And the page should have a meta tag for "description"
   And the page should include css for bootstrap.css
-  And the page should include js for jquery.js
+  And the page should include js for jquery.min.js
   And the page should include js for bootstrap.js
   And the page should include script for Google Analytics
 
