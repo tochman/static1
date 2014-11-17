@@ -4,6 +4,8 @@ describe '../public/index.html' do
   before(:each) do
     visit '../public/index.html'
   end
+
+  
   
   it {expect(page).to have_css 'section#header'}
   it {expect(page).to have_css 'section#main'}
@@ -30,21 +32,21 @@ describe '../public/index.html' do
     it { expect(@paragraph[0]).to have_text 'My content - Static1 Nitrous is awesome' }  
     it { expect(@paragraph[1]).to have_text 'Lorem ipsum' }
     
-    it 'should contain a sign-up form' do
-      expect(page).to have_css 'form#sign-up input.form-control#user-email'
-    end
-    
-    it 'should contain submit button' do
-      expect(page).to have_css 'button[type="submit"].btn.btn-default', text:'Submit'
+    it 'should contain a button' do
+      expect(page).to have_css 'button.btn.btn-default', text:'Click me'
     end
 
-    it 'should hide text on page load' do
-      expect(page).to_not have_text 'form submitted'
+    it 'should hide text on page load', js: true do
+      wait_for_ajax
+      expect(page).to have_selector '#toggle', visible: false
+      expect(page).to_not have_text 'button pressed'
     end
    
-    it 'should show text on button click' do
-      click_button 'Submit'
-      expect(page).to have_text 'form submitted', visible: true
+    it 'should show text on button click', js: true do
+      click_button 'Click me'
+      wait_for_ajax
+      expect(page).to have_selector '#toggle', visible: true
+      expect(page).to have_text 'button pressed'
     end
        
   end
@@ -64,5 +66,15 @@ describe '../public/index.html' do
       end
     end
 
+  end
+  
+  def wait_for_ajax
+    Timeout.timeout(Capybara.default_wait_time) do
+      loop until finished_all_ajax_requests?
+    end
+  end
+
+  def finished_all_ajax_requests?
+    page.evaluate_script('jQuery.active').zero?
   end
 end
