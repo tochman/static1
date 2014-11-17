@@ -1,5 +1,6 @@
 Then(/^the page should be titled "(.*?)"$/) do |title|
-  page.source.should have_title title
+  #page.source.should have_title title
+  expect(page.source).to have_title(title)
 end
 
 When(/^the page should have a ([^"]*) tag for "([^"]*)"$/) do |tag, content|

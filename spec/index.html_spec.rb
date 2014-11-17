@@ -5,6 +5,8 @@ describe '../public/index.html' do
     Capybara.current_driver = :webkit
     visit '../public/index.html'
   end
+
+  
   
   after(:each) do
     Capybara.use_default_driver
