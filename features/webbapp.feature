@@ -28,3 +28,8 @@ Scenario: Load the home page/template
 Scenario: Make sure the page has the right content
   Then I should see "Static1" in the header
   And I should see "My content - Static1" in the main section
+  
+Scenario:Display message if Submit is clicked
+  Given I click the "Submit" button
+  Then I should see "form submitted"
+  
