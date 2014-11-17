@@ -5,7 +5,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="stylesheet" href="css/bootstrap.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" ></script>
+	<script src="js/jquery-1.11.1.js" ></script>
     <script src="js/bootstrap.js"></script>
 </head>
 <body>
@@ -17,11 +17,9 @@
   <p>My content - Static1 Nitrous is awesome</p>
   <p>Lorem ipsum</p>
   <p>Ipsum lorem</p>
-  <form id="sign-up">
-      <input class="form-control" id="user-email"/>
-      <button id="submit" class="btn btn-default" type="submit">Submit</button>
-  </form>
-  <div id="toggle">form submitted</div>
+ 
+  <button id="button" class="btn btn-default">Click me</button>
+  <div id="toggle">button pressed</div>
 </section>
 <section id="footer">
     <p>My footer</p>
@@ -42,14 +40,15 @@
     ga('create','UA-XXXXX-X');ga('send','pageview');
 </script>
 
-<script>
 
-$(document).ready(function(){
-    $('#toggle').hide();
-    $('#submit').live('click',function(){
-        $('#toggle').toggle();
-    });
-});
+<script>
+	
+	$(document).ready(function(){
+    	$('#toggle').hide();
+    	$('#button').click(function(){
+        	$('#toggle').toggle();
+    	});
+	});
   
  
 </script>
